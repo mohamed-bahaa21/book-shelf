@@ -1,6 +1,6 @@
 import { gql } from "apollo-boost";
 
-const getBookQuery = gql`
+const getBooksQuery = gql`
     {
         books {
             name
@@ -26,4 +26,23 @@ const addBookMutation = gql`
     }
 `
 
-export { getBookQuery, getAuthorsQuery, addBookMutation }
+const getBookQuery = gql`
+    query($id: ID){
+        book(id: $id){
+            id
+            name
+            genre
+            author{
+                id
+                name
+                age
+                books {
+                    name
+                    id
+                }
+            }
+        }
+    }
+`
+
+export { getBooksQuery, getAuthorsQuery, addBookMutation, getBookQuery }
