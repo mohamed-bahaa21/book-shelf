@@ -7,7 +7,7 @@ import BookList from "./components/BookList"
 
 // apollo client setup
 const client = new ApolloClient({
-  uri: "https://localhost:8000/___graphql"
+  uri: "http://localhost:8000/___graphql"
 })
 
 class App extends Component {
@@ -17,7 +17,7 @@ class App extends Component {
 
         <div id="main">
           <h1>Book Shelf</h1>
-          <BookList></BookList>
+          <BookList />
         </div>
 
       </ApolloProvider>
