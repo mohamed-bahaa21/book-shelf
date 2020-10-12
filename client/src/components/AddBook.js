@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { graphql } from "react-apollo";
-import {flowRight as compose} from 'lodash';
+import { flowRight as compose } from 'lodash';
 
-import { getAuthorsQuery, addBookMutation } from "../queries/queries";
+import { getAuthorsQuery, addBookMutation, getBooksQuery } from "../queries/queries";
 
 class AddBook extends Component {
     constructor(props) {
@@ -32,7 +32,8 @@ class AddBook extends Component {
                 name: this.state.name,
                 genre: this.state.genre,
                 authorId: this.state.authorId,
-            }
+            },
+            refetchQueries: [{ query: getBooksQuery }]
         })
     }
 
@@ -64,6 +65,6 @@ class AddBook extends Component {
 }
 
 export default compose(
-    graphql(getAuthorsQuery, {name: "getAuthorsQuery"}),
-    graphql(addBookMutation, {name: "addBookMutation"})
+    graphql(getAuthorsQuery, { name: "getAuthorsQuery" }),
+    graphql(addBookMutation, { name: "addBookMutation" })
 )(AddBook)
