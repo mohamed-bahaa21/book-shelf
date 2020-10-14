@@ -6,6 +6,8 @@ import { ApolloProvider } from "react-apollo";
 import BookList from "./components/BookList"
 import AddBook from "./components/AddBook"
 
+import "./App.css"
+
 // apollo client setup
 const client = new ApolloClient({
   uri: "https://book-shelf-server.herokuapp.com/___graphql"
@@ -16,8 +18,7 @@ class App extends Component {
     return (
       <ApolloProvider client={client}>
 
-        <div id="main">
-          <h1>Book Shelf</h1>
+        <div className="app-header">
           <BookList />
           <AddBook />
         </div>

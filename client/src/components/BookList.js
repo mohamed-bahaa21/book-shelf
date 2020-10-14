@@ -4,6 +4,8 @@ import { graphql } from "react-apollo";
 import { getBooksQuery } from "../queries/queries";
 import BookDetails from './BookDetails';
 
+import "./BookList.css"
+
 class BookList extends Component {
     constructor(props) {
         super(props)
@@ -28,6 +30,7 @@ class BookList extends Component {
     render() {
         return (
             <div>
+                <h1>Book Shelf</h1>
                 <ul id="book-list">
                     {this.displayBooks()}
                 </ul>

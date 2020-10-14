@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { graphql } from "react-apollo";
 import { getBookQuery } from '../queries/queries';
+import Draggable from 'react-draggable';
 
+import "./BookDetails.css"
 // import { getBookQuery } from "../queries/queries";
 
 class BookDetails extends Component {
@@ -31,9 +33,11 @@ class BookDetails extends Component {
 
     render() {
         return (
-            <div className="book-details">
-                {this.displayBookDetails()}
-            </div>
+            <Draggable axis="x">
+                <div className="side-page noselect book-details">
+                    {this.displayBookDetails()}
+                </div>
+            </Draggable>
         );
     }
 }

@@ -1,0 +1,63 @@
+@keyframes start {
+    from {right: -50vw;}
+    to {right: 0vw;}
+  }
+
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+h1 {
+    color: white;
+}
+
+.side-page{
+    background-color: rgb(121, 121, 206);  
+    border-radius: 7px;
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0vw;
+    margin: 5rem;
+    padding: 1rem;
+    box-shadow: 0px 0px 45px -5px black;
+
+    animation: start 1s;
+}
+
+.side-page:hover {
+    cursor: grab;
+}
+
+.side-page:active {
+    cursor: grabbing;
+}
+
+
+
+
+
+.slide-enter {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  .slide-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  .slide-exit {
+    opacity: 1;
+  }
+  .slide-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
+  }

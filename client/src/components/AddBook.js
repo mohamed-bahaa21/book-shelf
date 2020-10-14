@@ -4,6 +4,8 @@ import { flowRight as compose } from 'lodash';
 
 import { getAuthorsQuery, addBookMutation, getBooksQuery } from "../queries/queries";
 
+import "./AddBook.css"
+
 class AddBook extends Component {
     constructor(props) {
         super(props)
